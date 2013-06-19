@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jnlp spec="1.0+" codebase="file:.">
+     <information>
+        <title>JavaRConsole</title>
+        <vendor>Oracle America, Inc.</vendor>
+        <description kind="one-line">JavaRConsole Console Redirection Application</description>
+        <description kind="tooltip">JavaRConsole Console Redirection Application</description>
+        <description kind="short">
+            JavaRConsole enables a user to view the video display of an
+            ILOM computer equipped with a service processor. It also enables
+            the user to redirect the local keyboard, mouse, CD-ROM and floppy drives to
+            the remote computer to allow for complete control over the remote machine.
+        </description>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se version="1.5+" initial-heap-size="32m"  max-heap-size="128m"/>
+        <jar href="Java/JavaRConsole.jar"/>
+        <jar href="Java/RedirLib.jar"/>
+<!-- These are only used to override the built in values. -->
+<!-- Enabling them will produce warnings with Java1.6 -->
+<!-- See CR 6884159 -->
+<!--
+        <property name="DEBUGLIST" value="ui,general,video,threads,cdrom,floppy,dispatcher,hid,scsi,network,cli"/>
+        <property name="SEV_WARN" value="ilomrc.log"/>
+        <property name="SEV_CRIT" value="ilomrc.log"/>
+-->
+    </resources>
+    <resources os="Linux" arch="i386">
+        <nativelib href="Java/linuxi386.jar"/>
+    </resources>
+    <resources os="Windows" arch="x86">
+        <nativelib href="Java/win32.jar"/>
+    </resources>
+    <resources os="SunOS" arch="x86">
+        <nativelib href="Java/solarisx86.jar"/>
+    </resources>
+    <resources os="SunOS" arch="sparc">
+        <nativelib href="Java/solarissparc.jar"/>
+    </resources>
+    <application-desc>
+        <argument>16</argument>
+        
+
+
+    </application-desc>
+</jnlp>
